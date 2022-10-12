@@ -1,18 +1,22 @@
-﻿Produktverwaltung
+﻿
+https://github.com/hansgrabner/Campus02MittwochAPI
 
-1.Modelklasse
+
+Produktverwaltung
+
+1.Aufgabe Modelklasse - new Item - Class
 Produkt:
-		Id
-		Bezeichnung 
-		Preis
+		Id (int)
+		Bezeichnung (string) 
+		Preis (double)
 
-2. ProduktController.cs
+2.Aufgabe ProduktController.cs - new Controller - API Read / Write
 
 		GET Produkt
 		GET Produkt/1
 		POST Produkt 			
 			{
-				"Id":-1,
+				"Id":0,
 				"Bezeichnung":"Laptop",
 				"Preis":
 			}
