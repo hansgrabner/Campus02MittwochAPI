@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Campus02MittwochAPI", "Campus02MittwochAPI\Campus02MittwochAPI.csproj", "{D6242AB5-8CDA-4EE9-8808-8220FB10FA47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6242AB5-8CDA-4EE9-8808-8220FB10FA47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6242AB5-8CDA-4EE9-8808-8220FB10FA47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6242AB5-8CDA-4EE9-8808-8220FB10FA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6242AB5-8CDA-4EE9-8808-8220FB10FA47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A50BA377-3C38-4730-9116-DCB46A09F339}
+	EndGlobalSection
+EndGlobal
