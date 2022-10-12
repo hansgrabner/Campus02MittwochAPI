@@ -1,0 +1,21 @@
+﻿Produktverwaltung
+
+1.Modelklasse
+Produkt:
+		Id
+		Bezeichnung 
+		Preis
+
+2. ProduktController.cs
+
+		GET Produkt
+		GET Produkt/1
+		POST Produkt 			
+			{
+				"Id":-1,
+				"Bezeichnung":"Laptop",
+				"Preis":
+			}
+		PUT Produkt/1 --> ändert den Preis und die Bezeichnung
+
+		DELETE Produkt/1
