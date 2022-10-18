@@ -17,14 +17,42 @@ namespace Campus02MittwochAPI.Controllers
         }
         // GET: api/<Lektor>
         [HttpGet]
+        [Route("/version1/NBLektoren")]
         public List<Lektor> Get()
         {
             return lektorList;
         }
 
+        [HttpGet]
+        [Route("/version1/NBLektorenMitWebSeriviceBezug")]
+        public List<Lektor> GetWebServices()
+        {
+            return lektorList;
+        }
+
+        [HttpGet]
+        [Route("/SimpleDaten")]
+        public void DemoV1(int i, string j, bool b, string vorname)
+        {
+
+        }
+        public class MyRequestClass
+        {
+            public int i { get; set; }
+            public string j { get; set; }
+            public bool b { get; set; }
+            public string vorname { get; set; }
+        }
+
+        [HttpGet]
+        [Route("ComplexerRequest")]
+        public void Demo2(MyRequestClass myRequest)
+        {
+           // myRequest.i;
+        }
         // GET api/<Lektor>/5
         [HttpGet("{id}")]
-        public Lektor Get(int id)
+        public IActionResult Get(int id)
         {
             Lektor gefunden = new Lektor();
             foreach (Lektor forEachVariable in lektorList)
@@ -35,16 +63,31 @@ namespace Campus02MittwochAPI.Controllers
                 }
             }
 
-            return gefunden;
+            if (gefunden.LektorId == 0)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(gefunden);
+            }
+            
          //   return lektorList.Where( l => l.LektorId==id ).FirstOrDefault();
         }
 
         // POST api/<Lektor>
         [HttpPost]
-        public void Post([FromBody] Lektor value)
+        public IActionResult Post([FromBody] Lektor lektor)
         {
-            value.LektorId = lektorList.Count + 1;
-            lektorList.Add(value);
+            if (lektor.Nachname=="X")
+            {
+                return BadRequest();
+            }
+
+            lektor.LektorId = lektorList.Count + 1;
+            lektorList.Add(lektor);
+
+            return Ok(lektor);
         }
 
         // PUT api/<Lektor>/5
