@@ -24,9 +24,9 @@ namespace Campus02MittwochAPI.Controllers
 
         // GET api/<Lektor>/5
         [HttpGet("{id}")]
-        public Produkt Get(int id)
+        public ActionResult Get(int id)
         {
-            Produkt gefunden = new Produkt();
+            Produkt gefunden = null;
             foreach (Produkt forEachVariable in productList)
             {
                 if (forEachVariable.Id==id)
@@ -34,17 +34,25 @@ namespace Campus02MittwochAPI.Controllers
                     gefunden = forEachVariable;
                 }
             }
-
-            return gefunden;
-         //   return lektorList.Where( l => l.LektorId==id ).FirstOrDefault();
+            if (gefunden == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(gefunden);
+            }       
         }
-
-        // POST api/<Lektor>
         [HttpPost]
-        public void Post([FromBody] Produkt value)
+        public ActionResult Post([FromBody] Produkt value)
         {
+            if (value.Preis < 0)
+                return BadRequest();
+
             value.Id = productList.Count + 1;
             productList.Add(value);
+
+            return CreatedAtAction("Get",new {id = value.Id});
         }
 
         // PUT api/<Lektor>/5

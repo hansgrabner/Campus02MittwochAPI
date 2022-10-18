@@ -74,7 +74,12 @@ namespace Campus02MittwochAPI.Controllers
             
          //   return lektorList.Where( l => l.LektorId==id ).FirstOrDefault();
         }
-
+        /*
+        Use helper extension methods like
+- GET: OK(object), NotFound()
+-POST: BadRequest()
+- CreatedAtAction(“Get“, new {id=12});
+        */
         // POST api/<Lektor>
         [HttpPost]
         public IActionResult Post([FromBody] Lektor lektor)
